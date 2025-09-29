@@ -1,0 +1,14 @@
+# Compiled files and executables
+*.exe
+*.o
+*.out
+*.dll
+*.so
+
+# CLion/CMake build directories
+cmake-build-*/
+.idea/
+
+# Other miscellaneous files
+*.log
+*.tmp
