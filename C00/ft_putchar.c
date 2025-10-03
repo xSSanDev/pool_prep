@@ -6,4 +6,8 @@ void ft_putchar(char a)
 int main()
 {
   ft_putchar('z');
+  ft_putchar('a');
+  ft_putchar('n');
+  ft_putchar('s');
+  ft_putchar('s');
 }
