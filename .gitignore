@@ -4,7 +4,7 @@
 *.out
 *.dll
 *.so
-
+*.venv
 # CLion/CMake build directories
 cmake-build-*/
 .idea/
