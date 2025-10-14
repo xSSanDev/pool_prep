@@ -1,3 +1,9 @@
+/*This problem requires you to convert a string of Roman numerals into its corresponding integer. The process involves              //
+ *summing the values of the symbols, which are typically written largest to smallest from left to right (e.g., VII = 5 + 1 + 1 = 7).//
+ *The main challenge is the subtraction rule, where a smaller numeral placed before a larger one signifies subtraction,             //
+ *such as IV for 4 (5 - 1) and IX for 9 (10 - 1). Your function must correctly interpret these special cases to calculate           //
+ *the final integer value.*/                                                                                                        //
+//----------------------------------------------------------------------------------------------------------------------------------//
 #include <unistd.h>
 void    ft_putchar(char c)
 {
@@ -53,26 +59,19 @@ int romanToInt(char* s)
 {
     int i = 0;
     int total = 0;
-
     while (s[i] != '\0')
     {
-        // Get the value of the current character.
         int current_value = get_value(s[i]);
-
-        // Check if there is a next character to compare with.
         if (s[i + 1] != '\0')
         {
             int next_value = get_value(s[i + 1]);
-
             if (current_value < next_value)
             {
-                // Subtraction case (e.g., "IV" -> 5 - 1)
                 total = total + (next_value - current_value);
-                i += 2; // Move past BOTH characters we just processed.
+                i += 2;
             }
             else
             {
-
                 total = total + current_value;
                 i++;
             }
