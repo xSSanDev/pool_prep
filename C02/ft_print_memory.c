@@ -1,4 +1,4 @@
-//*************ft_print_momory.c*****************///
+//*************ft_print_momory.c*******************///
 #include <unistd.h>
 void	ft_putchar(char c)
 {
