@@ -1,4 +1,4 @@
-//-----------------------------------------sum of digits ---------------------------------------//
+//---------------------------------------------sum of digits ---------------------------------------//
 #include <unistd.h>
 void    ft_putchar(char c)
 {
@@ -21,7 +21,7 @@ void    ft_putnbr(int nb)
 void    sum_of_digits(int n)
 {
     int sum = 0;
-    while(n != 0) // while(0) the condition false so the loop not working .
+    while(n != 0) // whene while(0) the condition false so the loop not working .
     {
         sum = sum + (n % 10);
         n = n / 10 ;
