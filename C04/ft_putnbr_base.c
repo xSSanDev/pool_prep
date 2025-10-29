@@ -119,7 +119,7 @@ int main(void)
 	ft_putchar('\n');
     ft_putnbr_base(42, "01"); ft_putchar('\n'); // Binary (base 2)
 	ft_putchar('\n');
-    ft_putnbr_base(42, "poneyvif");  // Octal (base 8)
+    ft_putnbr_base(42, "01234567");  // Octal (base 8)
 	ft_putchar('\n');
     return (0);
 }
