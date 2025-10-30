@@ -62,6 +62,21 @@ int     is_valid_base(char *base)
         }
         return (1);
 }
+int     get_char_index(char c, char *base)
+{
+        int     i;
+        i = 0;
+        while (base[i] != '\0')
+        {
+                if(base[i] == c)
+                {
+                        return (i);
+                }
+                i++;
+        }
+        return (-1);
+}
+
 int     ft_atoi_base(char *str, char *base)
 {
         int     len;
@@ -94,12 +109,41 @@ int     ft_atoi_base(char *str, char *base)
                 i++;
         }
         result = 0;
-        while(str[i] >= '0' && str[i] <= '0')
+        digit_value = get_char_index(str[i], base);
+        while (digit_value != -1)
         {
-                digit_value = str[i] - '0';
-                result = (result * 10) + digit_value;
-                i++;
+                        result = (result * len) + digit_value;
+                        i++;
+                        digit_value = get_char_index(str[i],base);
         }
         return (result * sign);
+}
+void    ft_putchar(char c)
+{
+        write(1,&c,1);
+}
+void    ft_putnbr(int nb)
+{
+        long long       n_long;
+        n_long = nb;
+        if(n_long < 0)
+        {
+                ft_putchar('-');
+                n_long = -n_long;
+        }
+        if(n_long >= 10)
+        {
+                ft_putnbr(n_long / 10);
+        }
+        ft_putchar((n_long % 10) + '0');
+}
+int main()
+{
+        ft_putnbr(ft_atoi_base("  --+2A","0123456789ABCDEF"));
+        ft_putchar('\n');
+        ft_putnbr(ft_atoi_base(" 101010", "01"));
+        ft_putchar('\n');
+        ft_putnbr(ft_atoi_base(" -52","01234567"));
 
+        return (0);
 }
