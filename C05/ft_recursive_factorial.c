@@ -27,7 +27,6 @@ int     ft_recursive_factorial(int  nb)
 }
 int main()
 {
-    ft_putnbr(ft_recursive_factorial(12));
-
+    ft_putnbr(ft_recursive_factorial(10));
     return 0;
 }
