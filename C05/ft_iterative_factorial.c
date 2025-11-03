@@ -22,7 +22,8 @@ int     ft_iterative_factorial(int nb)
     result = 1;
     while(nb > 0)
     {
-        result = result * nb;
+        result = result * nb
+
         nb--;
     }
     return (result);
