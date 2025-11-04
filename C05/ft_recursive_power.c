@@ -1,4 +1,14 @@
 #include <unistd.h>
+void    ft_putchar(char c)
+{
+    write(1,&c,1);
+}
+void    ft_putnbr(int nbr)
+{
+    if(nbr >= 10)
+        ft_putnbr(nbr / 10);
+    ft_putchar((nbr % 10) + '0');
+}
 int     ft_recursive_power(int nb, int power)
 {
     if(power < 0)
@@ -8,11 +18,8 @@ int     ft_recursive_power(int nb, int power)
     if(power > 0)
         return (nb * ft_recursive_power(nb, power - 1));
 }
-// test : power = 3 ===> 10 * ft_recursive(10, 2)
-//        nb = 10 ====>
-//        3 * 10 = 30
-//        2 * 10 = 20
-//        1 * 10 = 10
-//        0 * 10 = 0 ===> 1
-//        1 * 10 * 20 * 30 = 6000
-//
+int main()
+{
+    ft_putnbr(ft_recursive_power(10,3));
+    return (0);
+}
