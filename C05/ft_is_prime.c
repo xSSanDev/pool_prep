@@ -13,7 +13,7 @@ int     ft_is_prime(int nb)
 {
         // a prime numbre is greater than 1 and only divesor are 1 and itself
         // return 1 if number is prime
-        // return 0 if not
+        // return 0 if not .
         int     i;
         if(nb <=1 )
                 return 0;
