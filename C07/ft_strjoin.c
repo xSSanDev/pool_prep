@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
-
-/* ========================exemple =============================================
+/* =====================================exemple =============================================
  * size = 3
  * strs = {"Hello","World", "!"}
  * sep = ", "
@@ -27,7 +26,7 @@ char    *ft_strjoin(int size, char **strs, char *sep)
         int     i;
         int     j;
         int     k;
-//-----------------the size == 0 case-------------------
+//-----------------the size == 0 case-------------------//
         if(size == 0)
         {
                 new_string = (char *)malloc(sizeof(char) * 1);
@@ -36,7 +35,7 @@ char    *ft_strjoin(int size, char **strs, char *sep)
                 new_string[0] = '\0';
                 return(new_string);
         }
-//-----------------calculate total lenght---------------
+//-----------------calculate total lenght---------------//
         total_len = 0;
         i = 0;
         while(i < size)
@@ -46,16 +45,16 @@ char    *ft_strjoin(int size, char **strs, char *sep)
         }
         total_len += (ft_strlen(sep) * (size - 1));
         total_len += 1; // for '\0'
-//------------------Allocate Memory---------------------
+//------------------Allocate Memory-------------------------//
         new_string = (char *)malloc(sizeof(char) * total_len);
         if(new_string == NULL)
                 return (NULL);
-//-----------------Copy strings and separators----------
-        i = 0;
-        k = 0;
+//-----------------Copy strings and separators------------//
+        i = 0; // loop through the array of string
+        k = 0; // tracks our position in new_string
         while(i < size)
         {
-                j = 0;
+                j = 0; //loop through the characters of strs[i]
                 while(strs[i][j] != '\0')
                 {
                         new_string[k] = strs[i][j];
