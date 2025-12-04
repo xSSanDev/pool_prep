@@ -17,7 +17,7 @@ void    ft_putstr_err(char *str)
 
 void	ft_display_file(char *filename)
 {
-	int	fd; //file descriptor
+	int	fd; //file descriptor, it will store the key
 	int	ret; // return value of read (how many bytes read)
 	int	buffer[1024]; //our "bucket" to hold data
 
